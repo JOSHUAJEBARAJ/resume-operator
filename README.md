@@ -4,10 +4,12 @@
 This projects is heavily inspired by the [Resume-operator](https://github.com/JefeDavis/Resume-Operator)
 
 
-This project is my attempt on learning how to build the operator on kubernetes using the kubebuilder framework.
 
 
-![demo](demo/demo.mp4)
+https://github.com/user-attachments/assets/cdd07ecc-c9f0-48d9-b9de-53e347ef7d29
+
+
+
 
 
 ### Usage 
