@@ -1,0 +1,62 @@
+apiVersion: resume.joshuajebarj.com/v1
+kind: Resume
+metadata:
+  labels:
+    app.kubernetes.io/name: resume-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: resume-sample
+spec:
+  name: Joshua Jebaraj
+  contact:
+    website: https://joshuajebaraj.com/
+    linkedin: https://www.linkedin.com/in/joshuajebaraj/
+    github: https://github.com/JOSHUAJEBARAJ
+    email: joshuajebaraj.z@gmail.com
+  experience:
+    - title: Cloud Engineer
+      company: arch0
+      location: Bangalore, India
+      period: November 2023 – February 2025
+      responsibilities:
+        - Automated infrastructure provisioning on AWS using Terragrunt and Terraform, reducing setup time by 85% and eliminating manual errors via GitHub Actions.
+        - Led the integration of GCP, GitHub, and Google Workspace into the platform from planning to launch.
+        - Developed an internal Asset Management tool to track resources across GCP, GitHub, Google Workspace, and Docker Hub.
+        - Implemented security checks to detect and remediate vulnerabilities in cloud environments.
+    - title: Cloud Native Security Lead
+      company: we45
+      location: Bangalore, India
+      period: June 2021 – August 2023
+      responsibilities:
+        - Built a cloud sandbox for Google Cloud in AppSecEngineer, enabling isolated environments for lab sessions.
+        - Automated lab provisioning using Terraform.
+        - Developed and delivered Google Cloud and Kubernetes security labs for over 200 clients.
+        - Collaborated with the pentesting team on cloud security audits.
+  skills:
+    - category: programming_languages
+      skills:
+        - Go
+        - Python
+        - Bash
+    - category: cloud_infrastructure
+      skills:
+        - Google Cloud
+        - Kubernetes
+        - Containers
+        - Terraform
+    - category: tools
+      skills:
+        - GitHub Actions
+        - GitLab CI
+        - Linux
+  education:
+    - institution: Vellore Institute of Technology
+      degree: M.Tech Integrated Software Engineering
+      location: Chennai, India
+      period: June 2016 – June 2021
+  projects:
+    - name: GCP-Goat
+      description: A vulnerable Google Cloud Platform environment for learning and practicing GCP security.
+      link: https://gcpgoat.joshuajebaraj.com/
+    - name: GCP Enum
+      description: A reconnaissance tool that identifies publicly accessible GCP buckets.
+      link: https://github.com/JOSHUAJEBARAJ/gcp-enum

@@ -1,0 +1,155 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.17.2
+  name: resumes.resume.joshuajebarj.com
+spec:
+  group: resume.joshuajebarj.com
+  names:
+    kind: Resume
+    listKind: ResumeList
+    plural: resumes
+    singular: resume
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: Resume is the Schema for the resumes API.
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ResumeSpec defines the desired state of Resume.
+            properties:
+              contact:
+                description: Contact information
+                properties:
+                  email:
+                    type: string
+                  github:
+                    type: string
+                  linkedin:
+                    type: string
+                  website:
+                    type: string
+                required:
+                - email
+                - github
+                - linkedin
+                - website
+                type: object
+              education:
+                description: Education details
+                items:
+                  description: Education defines a single education entry
+                  properties:
+                    degree:
+                      type: string
+                    institution:
+                      type: string
+                    location:
+                      type: string
+                    period:
+                      type: string
+                  required:
+                  - degree
+                  - institution
+                  - location
+                  - period
+                  type: object
+                type: array
+              experience:
+                description: Work experience
+                items:
+                  description: Experience defines a single work experience entry
+                  properties:
+                    company:
+                      type: string
+                    location:
+                      type: string
+                    period:
+                      type: string
+                    responsibilities:
+                      items:
+                        type: string
+                      type: array
+                    title:
+                      type: string
+                  required:
+                  - company
+                  - location
+                  - period
+                  - responsibilities
+                  - title
+                  type: object
+                type: array
+              name:
+                description: Name of the individual
+                type: string
+              projects:
+                description: Projects
+                items:
+                  description: Project defines a single project entry
+                  properties:
+                    description:
+                      type: string
+                    link:
+                      type: string
+                    name:
+                      type: string
+                  required:
+                  - description
+                  - link
+                  - name
+                  type: object
+                type: array
+              skills:
+                description: Skills
+                items:
+                  description: Skills defines the skills of the individual
+                  properties:
+                    category:
+                      type: string
+                    skills:
+                      items:
+                        type: string
+                      type: array
+                  required:
+                  - category
+                  - skills
+                  type: object
+                type: array
+            required:
+            - contact
+            - education
+            - experience
+            - name
+            - projects
+            - skills
+            type: object
+          status:
+            description: ResumeStatus defines the observed state of Resume.
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
