@@ -6,6 +6,10 @@ This projects is heavily inspired by the [Resume-operator](https://github.com/Je
 
 This project is my attempt on learning how to build the operator on kubernetes using the kubebuilder framework.
 
+
+![demo](demo/demo.mkv)
+
+
 ### Usage 
 
 First install the CRDS
@@ -42,6 +46,8 @@ Then Open the application using the browser
 ```bash
 http://localhost:8080
 ```
+
+![demo](demo/image.png)
 
 ### Cleanup
 

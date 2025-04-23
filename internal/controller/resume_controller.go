@@ -78,7 +78,7 @@ func (r *ResumeReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 			return ctrl.Result{}, err
 		}
 		log.Info("ConfigMap created successfully", "ConfigMap.Name", cm.Name)
-		return ctrl.Result{RequeueAfter: time.Minute}, nil
+		return ctrl.Result{RequeueAfter: 5 * time.Second}, nil
 	} else if err != nil {
 		log.Error(err, "Failed to get ConfigMap")
 		return ctrl.Result{}, err
@@ -96,7 +96,7 @@ func (r *ResumeReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 			return ctrl.Result{}, err
 		}
 		log.Info("Deployment created successfully", "Deployment.Name", dep.Name)
-		return ctrl.Result{RequeueAfter: time.Minute}, nil
+		return ctrl.Result{}, nil
 
 	} else if err != nil {
 		log.Error(err, "Failed to get Deployment", err)
@@ -115,7 +115,8 @@ func (r *ResumeReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 		cm.Data["resume.yaml"] = string(resumeData)
 		if err := r.Update(ctx, cm); err != nil {
 			log.Error(err, "Failed to update ConfigMap")
-			return ctrl.Result{}, err
+			// For testing purpose we are requeuing the request
+			return ctrl.Result{RequeueAfter: 5 * time.Second}, err
 		}
 		log.Info("ConfigMap updated successfully", "ConfigMap.Name", cm.Name)
 
@@ -211,7 +212,7 @@ func (r *ResumeReconciler) createDeployment(ctx context.Context, resume *resumev
 					Containers: []corev1.Container{
 						{
 							Name:  resume.Name,
-							Image: "joshuajebaraj/resume-app:f69ee6c",
+							Image: "joshuajebaraj/resume-app:878d8fb",
 							Ports: []corev1.ContainerPort{
 								{
 									Name:          "http",
