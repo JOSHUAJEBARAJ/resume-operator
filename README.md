@@ -7,7 +7,7 @@ This projects is heavily inspired by the [Resume-operator](https://github.com/Je
 This project is my attempt on learning how to build the operator on kubernetes using the kubebuilder framework.
 
 
-![demo](demo/demo.mkv)
+![demo](demo/demo.mp4)
 
 
 ### Usage 
