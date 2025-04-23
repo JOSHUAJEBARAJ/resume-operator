@@ -35,7 +35,7 @@ type ResumeSpec struct {
 	Experience []Experience `json:"experience"`
 
 	// Skills
-	Skills []SkillGroup `json:"skills"`
+	Skills map[string][]string `json:"skills"`
 
 	// Education details
 	Education []Education `json:"education"`
@@ -61,11 +61,7 @@ type Experience struct {
 	Responsibilities []string `json:"responsibilities"`
 }
 
-// Skills defines the skills of the individual
-type SkillGroup struct {
-	Category string   `json:"category"`
-	Skills   []string `json:"skills"`
-}
+// Skills defines the skills of the individua
 
 // Education defines a single education entry
 type Education struct {

@@ -32,22 +32,19 @@ spec:
         - Developed and delivered Google Cloud and Kubernetes security labs for over 200 clients.
         - Collaborated with the pentesting team on cloud security audits.
   skills:
-    - category: programming_languages
-      skills:
-        - Go
-        - Python
-        - Bash
-    - category: cloud_infrastructure
-      skills:
-        - Google Cloud
-        - Kubernetes
-        - Containers
-        - Terraform
-    - category: tools
-      skills:
-        - GitHub Actions
-        - GitLab CI
-        - Linux
+    programming_languages:
+      - Go
+      - Python
+      - Bash
+    cloud_infrastructure:
+      - Google Cloud
+      - Kubernetes
+      - Containers
+      - Terraform
+    tools:
+      - GitHub Actions
+      - GitLab CI
+      - Linux
   education:
     - institution: Vellore Institute of Technology
       degree: M.Tech Integrated Software Engineering

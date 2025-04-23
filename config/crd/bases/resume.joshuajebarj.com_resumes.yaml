@@ -122,21 +122,12 @@ spec:
                   type: object
                 type: array
               skills:
+                additionalProperties:
+                  items:
+                    type: string
+                  type: array
                 description: Skills
-                items:
-                  description: Skills defines the skills of the individual
-                  properties:
-                    category:
-                      type: string
-                    skills:
-                      items:
-                        type: string
-                      type: array
-                  required:
-                  - category
-                  - skills
-                  type: object
-                type: array
+                type: object
             required:
             - contact
             - education
